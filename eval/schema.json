@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AgentResult",
+  "description": "Schema for validating agent output",
+  "type": "object",
+  "required": ["summary", "steps", "sources"],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "minLength": 10,
+      "description": "A summary of the answer"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "description": "List of steps or recommendations"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "List of source citations (file names or incident IDs)"
+    }
+  },
+  "additionalProperties": false
+}

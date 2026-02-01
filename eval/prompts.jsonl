@@ -1,0 +1,10 @@
+{"id": "eval-001", "prompt": "How do I handle a database connection timeout?", "expects_docs": true, "expects_incidents": true}
+{"id": "eval-002", "prompt": "What are the steps for incident response?", "expects_docs": true, "expects_incidents": false}
+{"id": "eval-003", "prompt": "Show me recent critical incidents", "expects_docs": false, "expects_incidents": true}
+{"id": "eval-004", "prompt": "How do I rollback a failed deployment?", "expects_docs": true, "expects_incidents": false}
+{"id": "eval-005", "prompt": "What caused the last database outage?", "expects_docs": false, "expects_incidents": true}
+{"id": "eval-006", "prompt": "How do I troubleshoot slow queries?", "expects_docs": true, "expects_incidents": true}
+{"id": "eval-007", "prompt": "What is the procedure for emergency database connection kill?", "expects_docs": true, "expects_incidents": false}
+{"id": "eval-008", "prompt": "List incidents related to Redis", "expects_docs": false, "expects_incidents": true}
+{"id": "eval-009", "prompt": "How do I deploy a new version to production?", "expects_docs": true, "expects_incidents": false}
+{"id": "eval-010", "prompt": "What were the root causes of past connection pool issues?", "expects_docs": true, "expects_incidents": true}
