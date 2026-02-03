@@ -46,6 +46,8 @@ services:
       - ./api:/app/api:ro
       - ./worker:/app/worker:ro
       - ./data:/app/data:ro
+      - ./tests:/app/tests:ro
+      - ./eval:/app/eval:ro
     depends_on:
       db:
         condition: service_healthy
@@ -72,6 +74,8 @@ services:
       - ./api:/app/api:ro
       - ./worker:/app/worker:ro
       - ./data:/app/data:ro
+      - ./tests:/app/tests:ro
+      - ./eval:/app/eval:ro
     depends_on:
       db:
         condition: service_healthy

@@ -15,9 +15,10 @@ import jsonschema
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from api.database import get_db_session
-from worker.agent.executor import execute_plan
-from worker.agent.planner import create_plan
+# noqa: E402 - imports after sys.path modification
+from api.database import get_db_session  # noqa: E402
+from worker.agent.executor import execute_plan  # noqa: E402
+from worker.agent.planner import create_plan  # noqa: E402
 
 
 @dataclass

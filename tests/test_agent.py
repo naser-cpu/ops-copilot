@@ -5,7 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from api.schemas import AgentPlan, AgentResult
-from worker.agent.executor import execute_plan, _synthesize_deterministic
+from worker.agent.executor import _synthesize_deterministic, execute_plan
 from worker.agent.planner import _extract_keywords, _needs_docs, _needs_incidents, create_plan
 from worker.agent.tools import query_incidents, search_docs
 

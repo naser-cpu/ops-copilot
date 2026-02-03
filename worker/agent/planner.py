@@ -94,6 +94,7 @@ def _extract_keywords(text: str) -> list[str]:
         "this",
         "that",
         "from",
+        "how",
     }
     return [w for w in words if w not in stop_words]
 

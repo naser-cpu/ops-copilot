@@ -48,7 +48,7 @@ def process_request(request_id: str) -> dict:
             # Step A: Create plan
             logger.info(f"Creating plan for request {request_id}")
             plan = create_plan(db_request.text)
-            db_request.plan = plan.model_dump()
+            db_request.plan = plan.model_dump(mode="json")
             db.commit()
 
             # Step B: Execute plan
@@ -56,8 +56,8 @@ def process_request(request_id: str) -> dict:
             result, tool_calls = execute_plan(db_request.text, plan, db)
 
             # Store results
-            db_request.result = result.model_dump()
-            db_request.tool_calls = [tc.model_dump() for tc in tool_calls]
+            db_request.result = result.model_dump(mode="json")
+            db_request.tool_calls = [tc.model_dump(mode="json") for tc in tool_calls]
             db_request.status = RequestStatus.DONE.value
             db_request.completed_at = datetime.utcnow()
             db.commit()
@@ -70,6 +70,7 @@ def process_request(request_id: str) -> dict:
             logger.error(traceback.format_exc())
 
             # Update status to failed
+            db.rollback()
             db_request.status = RequestStatus.FAILED.value
             db_request.error = str(e)
             db_request.completed_at = datetime.utcnow()
