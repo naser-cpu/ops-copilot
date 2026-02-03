@@ -1,7 +1,7 @@
 # Database Troubleshooting Guide
-##### Credit
-Auto generated data for demonstration purposes by ChatGPT
 
+## Credit
+Auto generated data for demonstration purposes by ChatGPT
 
 ## Overview
 This guide covers common database issues and their solutions, focusing on PostgreSQL and connection management.

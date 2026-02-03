@@ -1,7 +1,7 @@
 # Deployment Guide
-##### Credit
-Auto generated data for demonstration purposes by ChatGPT
 
+## Credit
+Auto generated data for demonstration purposes by ChatGPT
 
 ## Overview
 This guide covers deployment procedures, rollback strategies, and best practices for releasing new versions of our services.
