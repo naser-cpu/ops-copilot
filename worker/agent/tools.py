@@ -133,12 +133,7 @@ def query_incidents(query: str, db: Session) -> list[dict[str, Any]]:
 
     if not keywords:
         # If no keywords, return recent incidents
-        incidents = (
-            db.query(Incident)
-            .order_by(Incident.created_at.desc())
-            .limit(5)
-            .all()
-        )
+        incidents = db.query(Incident).order_by(Incident.created_at.desc()).limit(5).all()
     else:
         # Build search conditions
         conditions = []

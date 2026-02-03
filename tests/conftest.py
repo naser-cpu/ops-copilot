@@ -14,6 +14,7 @@ os.environ.setdefault(
 os.environ.setdefault("REDIS_URL", "redis://localhost:6379")
 os.environ.setdefault("USE_REAL_LLM", "false")
 
+
 @pytest.fixture(scope="session")
 def db_engine():
     """Create database engine for tests."""
