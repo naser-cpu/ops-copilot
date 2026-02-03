@@ -14,7 +14,10 @@ from api.models import Incident
 logger = logging.getLogger(__name__)
 
 # Path to runbooks directory
-RUNBOOKS_DIR = Path(os.getenv("RUNBOOKS_DIR", "/app/data/runbooks"))
+_default_runbooks_dir = Path("/app/data/runbooks")
+if not _default_runbooks_dir.exists():
+    _default_runbooks_dir = Path(__file__).resolve().parents[2] / "data" / "runbooks"
+RUNBOOKS_DIR = Path(os.getenv("RUNBOOKS_DIR", str(_default_runbooks_dir)))
 
 
 def search_docs(query: str) -> list[dict[str, Any]]:
