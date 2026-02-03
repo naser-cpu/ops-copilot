@@ -29,6 +29,7 @@ docker-compose.override.yml
 # Documentation
 *.md
 !README.md
+!data/runbooks/*.md
 docs/
 
 # Tests (optional - include if you want to run tests in container)
