@@ -56,7 +56,7 @@ demo-full: up ## Run full demo with status check
 		-d '{"text": "How do I handle a database connection timeout?", "priority": "high"}' | python3 -c "import sys,json; print(json.load(sys.stdin)['request_id'])") && \
 	echo "Request ID: $$REQUEST_ID" && \
 	echo "\n=== Waiting for processing... ===" && \
-	sleep 5 && \
+	sleep 10 && \
 	echo "\n=== Checking status ===" && \
 	curl -s "http://localhost:8000/requests/$$REQUEST_ID" | python3 -m json.tool
 
@@ -73,13 +73,13 @@ eval-local: ## Run evaluation locally
 	python -m eval.run_eval
 
 lint: ## Run ruff linter
-	ruff check api/ worker/ tests/ eval/
+	docker compose exec api ruff check api/ worker/ tests/ eval/
 
 lint-fix: ## Run ruff linter with auto-fix
-	ruff check api/ worker/ tests/ eval/ --fix
+	docker compose exec api ruff check api/ worker/ tests/ eval/ --fix
 
 format: ## Format code with ruff
-	ruff format api/ worker/ tests/ eval/
+	docker compose exec api ruff format api/ worker/ tests/ eval/
 
 clean: ## Remove volumes and images
 	docker compose down -v --rmi local

@@ -1,6 +1,6 @@
 # Agentic Lab Assistant
 
-A containerized, local-first agentic workflow system that processes lab requests asynchronously using a planner-executor architecture.
+A containerized, local first agentic workflow system that processes lab requests asynchronously using a planner executor architecture.
 
 ## Architecture
 
