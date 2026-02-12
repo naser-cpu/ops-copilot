@@ -1,6 +1,6 @@
-# Agentic Lab Assistant
+# Operations Copilot
 
-A containerized, local first agentic workflow system that processes lab requests asynchronously using a planner executor architecture.
+An AI ops assistant that retrieves runbooks and incident history to deliver fast, actionable guidance for on call teams. Or reduce IT departments turnaround time on tickets and improve stakeholder satisfaction.
 
 ## Architecture
 
